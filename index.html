@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Career Guidance</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Smart Career Guidance</h2>
+        <form method="POST">
+            <label for="math">Math Score:</label>
+            <input type="number" name="math" required>
+
+            <label for="science">Science Score:</label>
+            <input type="number" name="science" required>
+
+            <label for="english">English Score:</label>
+            <input type="number" name="english" required>
+
+            <label for="interest">Interest Area:</label>
+            <input type="text" name="interest" placeholder="e.g. engineering, commerce, arts" required>
+
+            <input type="submit" value="Predict Career">
+        </form>
+
+        {% if result %}
+            <div class="result">
+                Suggested Career Path: <strong>{{ result }}</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
